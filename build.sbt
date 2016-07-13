@@ -22,3 +22,9 @@ libraryDependencies ++= Seq(
 // Test coverage configuration
 coverageMinimum := 100
 coverageFailOnMinimum := true
+
+bintrayOrganization := Some("outtherelabs")
+
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
+
+bintrayPackageLabels := Seq("playframework", "scala", "diagnostics")

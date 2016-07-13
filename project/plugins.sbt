@@ -12,3 +12,6 @@ addSbtPlugin("org.scalastyle" %% "scalastyle-sbt-plugin" % "0.8.0")
 
 // Build Info
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.6.1")
+
+// Release management
+addSbtPlugin("me.lessis" % "bintray-sbt" % "0.3.0")

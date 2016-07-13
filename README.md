@@ -1,7 +1,7 @@
 # Play Application Diagnostics
 [![License][licenseImg]][licenseLink] [![Travis-CI][travisCiImage]][travisCiLink]
 [![Coverage][coverallsImg]][coverallsLink] [![Codacy][codacyImg]][codacyLink]
-[![Dependencies][versionEyeImg]][versionEyeLink]
+[![Dependencies][versionEyeImg]][versionEyeLink] [![Download][bintrayImg]][bintrayLink]
 
 Application diagnostics endpoints for Play framework.
 
@@ -19,6 +19,9 @@ Application diagnostics endpoints for Play framework.
 
 [coverallsImg]: https://coveralls.io/repos/github/OutThereLabs/play-application-diagnostics/badge.svg?branch=master
 [coverallsLink]: https://coveralls.io/github/OutThereLabs/play-application-diagnostics
+
+[bintrayImg]: https://api.bintray.com/packages/outtherelabs/maven/play-application-diagnostics/images/download.svg
+[bintrayLink]: https://bintray.com/outtherelabs/maven/play-application-diagnostics/_latestVersion
 
 ## Installation
 
