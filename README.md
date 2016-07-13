@@ -1,6 +1,24 @@
 # Play Application Diagnostics
+[![License][licenseImg]][licenseLink] [![Travis-CI][travisCiImage]][travisCiLink]
+[![Coverage][coverallsImg]][coverallsLink] [![Codacy][codacyImg]][codacyLink]
+[![Dependencies][versionEyeImg]][versionEyeLink]
 
 Application diagnostics endpoints for Play framework.
+
+[licenseImg]: https://img.shields.io/github/license/pathikrit/better-files.svg
+[licenseLink]: LICENSE
+
+[travisCiImage]: https://travis-ci.org/OutThereLabs/play-application-diagnostics.svg?branch=master
+[travisCiLink]: https://travis-ci.org/OutThereLabs/play-application-diagnostics
+
+[codacyImg]: https://api.codacy.com/project/badge/Grade/cde1cc476d14466dbb80ea325aa090d5
+[codacyLink]: https://www.codacy.com/app/otl/play-application-diagnostics
+
+[versionEyeImg]: https://www.versioneye.com/user/projects/5786c8456edb08003f207517/badge.svg?style=flat-square
+[versionEyeLink]: https://www.versioneye.com/user/projects/5786c8456edb08003f207517
+
+[coverallsImg]: https://coveralls.io/repos/github/OutThereLabs/play-application-diagnostics/badge.svg?branch=master
+[coverallsLink]: https://coveralls.io/github/OutThereLabs/play-application-diagnostics
 
 ## Installation
 
