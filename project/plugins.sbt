@@ -1,6 +1,9 @@
 // Test Coverage
 addSbtPlugin("org.scoverage" %% "sbt-scoverage" % "1.3.5")
 
+// Test Coverage Reports
+addSbtPlugin("org.scoverage" % "sbt-coveralls" % "1.1.0")
+
 // Style Guide
 addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.6.0")
 
