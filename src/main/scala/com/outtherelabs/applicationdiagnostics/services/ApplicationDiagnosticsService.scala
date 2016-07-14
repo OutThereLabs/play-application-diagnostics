@@ -2,13 +2,14 @@ package com.outtherelabs.applicationdiagnostics.services
 
 import com.outtherelabs.applicationdiagnostics.models.{ ApplicationDiagnostics, BuildInformation }
 import java.net.InetAddress
+import java.util.UUID
 import javax.inject.Inject
 import play.api.{ Configuration, Environment }
 import scala.reflect.runtime.universe
 
 class ApplicationDiagnosticsService @Inject() (config: Configuration, env: Environment) {
   val buildInfoPackage = config.getString("application-diagnostics.build-info-package").getOrElse("com.outtherelabs")
-  val diagnosticsToken = config.getString("application-diagnostics.token").get
+  val diagnosticsToken = config.getString("application-diagnostics.token").getOrElse(UUID.randomUUID.toString)
 
   val runtimeMirror = universe.runtimeMirror(env.classLoader)
   val module = runtimeMirror.staticModule(s"$buildInfoPackage.BuildInfo")
@@ -28,7 +29,7 @@ class ApplicationDiagnosticsService @Inject() (config: Configuration, env: Envir
     hostName = InetAddress.getLocalHost.getHostName,
     versions = getVersions,
     env = sys.env,
-    config = config.entrySet.map(m => m._1 -> m._2.toString).toMap
+    config = config.entrySet.map { case (configKey, configValue) => configKey -> configValue.toString }.toMap
   )
 
   private def getVersions: Map[String, String] = Map(

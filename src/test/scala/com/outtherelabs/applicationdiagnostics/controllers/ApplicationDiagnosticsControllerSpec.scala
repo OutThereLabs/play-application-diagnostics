@@ -11,7 +11,7 @@ import play.api.test.Helpers._
 class ApplicationDiagnosticsControllerSpec extends PlaySpec with OneAppPerSuite {
   implicit val mat = app.injector.instanceOf[Materializer]
   val config = app.injector.instanceOf[Configuration]
-  val diagnosticsToken = config.getString("application-diagnostics.token").get
+  val diagnosticsToken = config.getString("application-diagnostics.token").getOrElse("test-token")
   val applicationDiagnosticsService = app.injector.instanceOf[ApplicationDiagnosticsService]
   val controller = app.injector.instanceOf[ApplicationDiagnosticsController]
 
