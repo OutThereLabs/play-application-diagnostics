@@ -1,7 +1,7 @@
 # Play Application Diagnostics
-[![License][licenseImg]][licenseLink] [![Travis-CI][travisCiImage]][travisCiLink]
-[![Coverage][coverallsImg]][coverallsLink] [![Codacy][codacyImg]][codacyLink]
-[![Dependencies][versionEyeImg]][versionEyeLink] [![Download][bintrayImg]][bintrayLink]
+[![Travis-CI][travisCiImage]][travisCiLink] [![Coverage][coverallsImg]][coverallsLink]
+[![Dependencies][versionEyeImg]][versionEyeLink] [![Codacy][codacyImg]][codacyLink]
+[![Download][bintrayImg]][bintrayLink] [![Maven][mavenImg]][mavenLink] [![License][licenseImg]][licenseLink]
 
 Application diagnostics endpoints for Play framework.
 
@@ -22,6 +22,9 @@ Application diagnostics endpoints for Play framework.
 
 [bintrayImg]: https://api.bintray.com/packages/outtherelabs/maven/play-application-diagnostics/images/download.svg
 [bintrayLink]: https://bintray.com/outtherelabs/maven/play-application-diagnostics/_latestVersion
+
+[mavenImg]:  https://img.shields.io/maven-central/v/com.outtherelabs/play-application-diagnostics_2.11.svg
+[mavenLink]: http://search.maven.org/#search%7Cga%7C1%7Cplay-application-diagnostics
 
 ## Installation
 

@@ -25,6 +25,22 @@ coverageFailOnMinimum := true
 
 bintrayOrganization := Some("outtherelabs")
 
+bintrayPackageLabels := Seq("playframework", "scala", "diagnostics")
+
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 
-bintrayPackageLabels := Seq("playframework", "scala", "diagnostics")
+pomExtra in Global := {
+  <url>https://github.com/OutThereLabs/play-application-diagnostics</url>
+  <scm>
+    <connection>scm:git:github.com:OutThereLabs/play-application-diagnostics.git</connection>
+    <developerConnection>scm:git:github.com:OutThereLabs/play-application-diagnostics.git</developerConnection>
+    <url>git@github.com:OutThereLabs/play-application-diagnostics.git</url>
+  </scm>
+  <developers>
+    <developer>
+      <id>jtescher</id>
+      <name>Julian Tescher</name>
+      <url>https://github.com/jtescher/</url>
+    </developer>
+  </developers>
+}
