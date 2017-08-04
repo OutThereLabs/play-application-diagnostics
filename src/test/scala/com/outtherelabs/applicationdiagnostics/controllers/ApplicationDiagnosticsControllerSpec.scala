@@ -2,18 +2,19 @@ package com.outtherelabs.applicationdiagnostics.controllers
 
 import akka.stream.Materializer
 import com.outtherelabs.applicationdiagnostics.services.ApplicationDiagnosticsService
-import org.scalatestplus.play.{ OneAppPerSuite, PlaySpec }
+import org.scalatestplus.play.PlaySpec
+import org.scalatestplus.play.guice.GuiceOneAppPerSuite
 import play.api.Configuration
 import play.api.libs.json.Json
-import play.api.test.FakeRequest
 import play.api.test.Helpers._
+import play.api.test.{ FakeRequest, Injecting }
 
-class ApplicationDiagnosticsControllerSpec extends PlaySpec with OneAppPerSuite {
-  implicit val mat = app.injector.instanceOf[Materializer]
-  val config = app.injector.instanceOf[Configuration]
-  val diagnosticsToken = config.getString("application-diagnostics.token").getOrElse("test-token")
-  val applicationDiagnosticsService = app.injector.instanceOf[ApplicationDiagnosticsService]
-  val controller = app.injector.instanceOf[ApplicationDiagnosticsController]
+class ApplicationDiagnosticsControllerSpec extends PlaySpec with GuiceOneAppPerSuite with Injecting {
+  implicit private val mat = inject[Materializer]
+  private val config = inject[Configuration]
+  private val diagnosticsToken = config.get[String]("application-diagnostics.token")
+  private val applicationDiagnosticsService = inject[ApplicationDiagnosticsService]
+  private val controller = inject[ApplicationDiagnosticsController]
 
   "#index" should {
     "render application diagnostics if authorized" in {
