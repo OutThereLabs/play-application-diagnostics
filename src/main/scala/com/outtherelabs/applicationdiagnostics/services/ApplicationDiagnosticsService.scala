@@ -8,12 +8,14 @@ import play.api.{ Configuration, Environment }
 import scala.reflect.runtime.universe
 
 class ApplicationDiagnosticsService @Inject() (config: Configuration, env: Environment) {
-  val buildInfoPackage = config.getString("application-diagnostics.build-info-package").getOrElse("com.outtherelabs")
-  val diagnosticsToken = config.getString("application-diagnostics.token").getOrElse(UUID.randomUUID.toString)
+  private val buildInfoPackage = config.getOptional[String]("application-diagnostics.build-info-package")
+    .getOrElse("com.outtherelabs")
+  val diagnosticsToken: String = config.getOptional[String]("application-diagnostics.token")
+    .getOrElse(UUID.randomUUID.toString)
 
-  val runtimeMirror = universe.runtimeMirror(env.classLoader)
-  val module = runtimeMirror.staticModule(s"$buildInfoPackage.BuildInfo")
-  val buildInfo: BuildInformation = runtimeMirror.reflectModule(module).instance.asInstanceOf[BuildInformation]
+  private val runtimeMirror = universe.runtimeMirror(env.classLoader)
+  private val module = runtimeMirror.staticModule(s"$buildInfoPackage.BuildInfo")
+  private val buildInfo: BuildInformation = runtimeMirror.reflectModule(module).instance.asInstanceOf[BuildInformation]
 
   def getDiagnosticsFromToken(token: String): Option[ApplicationDiagnostics] = {
     if (token == diagnosticsToken) {
