@@ -38,7 +38,7 @@ Then for Play >= `2.5.x` add the following to `build.sbt`:
 
 ```scala
 // Application diagnostics library
-libraryDependencies += "com.outtherelabs" %% "play-application-diagnostics" % "0.1.0"
+libraryDependencies += "com.outtherelabs" %% "play-application-diagnostics" % "0.2.0"
 
 // Package name for sbt-buildinfo
 buildInfoPackage := "com.yourpackagenamehere"
